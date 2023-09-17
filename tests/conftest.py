@@ -12,20 +12,22 @@ options = webdriver.ChromeOptions()
 @pytest.fixture(scope='function', autouse=True)
 def browser_opt():
     browser.config.base_url = 'https://innoseti.ru/'
+    options.add_argument('window-size=1920,1080')
 
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
 
     selenoid_capabilities = {
-        'browser_name': 'chrome',
-        'browser_version': '100',
+        'browserName': 'chrome',
+        'browserVersion': '100',
         'selenoid:options': {
             'enableVNC': True,
             'enableVideo': True
         }
     }
 
-    options.add_argument('window-size=1920,1080')
+    # browser.config.driver_options = options
+
     options.capabilities.update(selenoid_capabilities)
 
     browser.config.driver = webdriver.Remote(
