@@ -11,13 +11,13 @@ options = webdriver.ChromeOptions()
 
 @pytest.fixture(scope='function', autouse=True)
 def browser_opt():
-    browser.config.base_url='https://innoseti.ru/'
+    browser.config.base_url = 'https://innoseti.ru/'
 
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
 
     selenoid_capabilities = {
-        'browser_name':'chrome',
+        'browser_name': 'chrome',
         'browser_version': '100',
         'selenoid:options': {
             'enableVNC': True,

@@ -7,5 +7,3 @@ def test_elements_texts():
     main_page.open()
 
     main_page.assert_banner_text()
-
-
