@@ -58,3 +58,11 @@ class MainPage:
     @allure.step('Assert opened news page')
     def assert_opened_news_page(self):
         browser.element('[field=title]').should(be.visible).should(have.exact_text('Новости'))
+
+    @allure.step('Go to article page')
+    def go_to_article_page(self):
+        browser.all('.js-feed-post').first.click()
+
+    @allure.step('Assert opened article page')
+    def assert_opened_article_page(self):
+        browser.element('#rec630882130>.t758').should(be.visible).should(have.text('Главная\n→\nНовости'))

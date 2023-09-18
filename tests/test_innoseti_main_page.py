@@ -24,7 +24,7 @@ def test_assert_elements_texts():
 @allure.severity(Severity.CRITICAL)
 @allure.label('owner', 'Evgenii Li')
 @allure.feature('Main page')
-@allure.story('Open products page')
+@allure.story('Go to products page')
 @allure.link('https://innoseti.ru/')
 def test_go_to_products_page():
     main_page.open()
@@ -38,7 +38,7 @@ def test_go_to_products_page():
 @allure.severity(Severity.CRITICAL)
 @allure.label('owner', 'Evgenii Li')
 @allure.feature('Main page')
-@allure.story('Open work with us page')
+@allure.story('Go to work with us page')
 @allure.link('https://innoseti.ru/')
 def test_go_to_work_us_page():
     main_page.open()
@@ -52,7 +52,7 @@ def test_go_to_work_us_page():
 @allure.severity(Severity.CRITICAL)
 @allure.label('owner', 'Evgenii Li')
 @allure.feature('Main page')
-@allure.story('Open news page')
+@allure.story('Go to news page')
 @allure.link('https://innoseti.ru/')
 def test_go_to_news_page():
     main_page.open()
@@ -60,3 +60,17 @@ def test_go_to_news_page():
     main_page.go_to_news_page()
 
     main_page.assert_opened_news_page()
+
+
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('owner', 'Evgenii Li')
+@allure.feature('Main page')
+@allure.story('Go to article page')
+@allure.link('https://innoseti.ru/')
+def test_open_article():
+    main_page.open()
+
+    main_page.go_to_article_page()
+
+    main_page.assert_opened_article_page()
