@@ -39,7 +39,7 @@ class MainPage:
         browser.element('[data-menu-item-number="2"]').click()
 
     @allure.step('Assert opened products page')
-    def assert_opened_product_page(self):
+    def assert_opened_products_page(self):
         browser.element('[field=title]').should(be.visible).should(have.exact_text('Продукты'))
 
     @allure.step('Go to work with us page')

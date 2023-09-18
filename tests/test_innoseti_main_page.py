@@ -1,8 +1,17 @@
+import allure
+
+from allure_commons.types import Severity
 from innoseti_tests.pages.main_page import MainPage
 
 main_page = MainPage()
 
 
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('owner', 'Evgenii Li')
+@allure.feature('Main page')
+@allure.story('Assert elements texts')
+@allure.link('https://innoseti.ru/')
 def test_assert_elements_texts():
     main_page.open()
 
@@ -11,14 +20,26 @@ def test_assert_elements_texts():
     main_page.assert_partners_text()
 
 
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('owner', 'Evgenii Li')
+@allure.feature('Main page')
+@allure.story('Open products page')
+@allure.link('https://innoseti.ru/')
 def test_go_to_products_page():
     main_page.open()
 
     main_page.go_to_products_page()
 
-    main_page.assert_opened_product_page()
+    main_page.assert_opened_products_page()
 
 
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('owner', 'Evgenii Li')
+@allure.feature('Main page')
+@allure.story('Open work with us page')
+@allure.link('https://innoseti.ru/')
 def test_go_to_work_us_page():
     main_page.open()
 
@@ -27,6 +48,12 @@ def test_go_to_work_us_page():
     main_page.assert_opened_work_with_us_page()
 
 
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('owner', 'Evgenii Li')
+@allure.feature('Main page')
+@allure.story('Open news page')
+@allure.link('https://innoseti.ru/')
 def test_go_to_news_page():
     main_page.open()
 
