@@ -1,6 +1,6 @@
 import allure
 
-from selene import browser, have
+from selene import browser, have, be
 
 
 class MainPage:
@@ -33,3 +33,28 @@ class MainPage:
             'Партнёры',
             'С нами работают 8 из 15 крупнейших страховых компаний России'
         ))
+
+    @allure.step('Go to products page')
+    def go_to_products_page(self):
+        browser.element('[data-menu-item-number="2"]').click()
+
+    @allure.step('Assert opened products page')
+    def assert_opened_product_page(self):
+        browser.element('[field=title]').should(be.visible).should(have.exact_text('Продукты'))
+
+    @allure.step('Go to work with us page')
+    def go_to_work_with_us_page(self):
+        browser.element('[data-menu-item-number="3"]').click()
+
+    @allure.step('Assert opened work with us page')
+    def assert_opened_work_with_us_page(self):
+        (browser.element('[field=tn_text_1688389796413]').should(be.visible).
+         should(have.exact_text('Привет!\nМы —«Инносети»')))
+
+    @allure.step('Go to news page')
+    def go_to_news_page(self):
+        browser.element('[data-menu-item-number="4"]').click()
+
+    @allure.step('Assert opened news page')
+    def assert_opened_news_page(self):
+        browser.element('[field=title]').should(be.visible).should(have.exact_text('Новости'))

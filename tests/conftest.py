@@ -11,9 +11,6 @@ options = webdriver.ChromeOptions()
 
 @pytest.fixture(scope='function', autouse=True)
 def browser_opt():
-    browser.config.base_url = 'https://innoseti.ru/'
-    options.add_argument('window-size=1920,1080')
-
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
 
@@ -26,8 +23,8 @@ def browser_opt():
         }
     }
 
-    # browser.config.driver_options = options
-
+    browser.config.base_url = 'https://innoseti.ru/'
+    options.add_argument('window-size=1920,1080')
     options.capabilities.update(selenoid_capabilities)
 
     browser.config.driver = webdriver.Remote(
