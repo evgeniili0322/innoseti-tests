@@ -65,4 +65,4 @@ class MainPage:
 
     @allure.step('Assert opened article page')
     def assert_opened_article_page(self):
-        browser.element('#rec630882130>.t758').should(be.visible).should(have.text('Главная\n→\nНовости'))
+        browser.element('.t758 .t-container').should(be.visible).should(have.text('Главная\n→\nНовости'))

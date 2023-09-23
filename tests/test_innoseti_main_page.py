@@ -40,7 +40,7 @@ def test_go_to_products_page():
 @allure.feature('Main page')
 @allure.story('Go to work with us page')
 @allure.link('https://innoseti.ru/')
-def test_go_to_work_us_page():
+def test_go_to_work_with_us_page():
     main_page.open()
 
     main_page.go_to_work_with_us_page()
